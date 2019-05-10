@@ -47,3 +47,6 @@ h6 {
   background: var(--mainYellow);
   color: var(--mainBrown) !important;
 }
+.footer {
+  background: var(--mainBrown);
+}
