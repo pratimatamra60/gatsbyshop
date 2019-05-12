@@ -55,3 +55,6 @@ h6 {
 .about-background {
   min-height: 60vh;
 }
+.menu {
+  background: var(--mainGrey);
+}
