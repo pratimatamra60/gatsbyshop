@@ -2,8 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FaGulp } from "react-icons/fa"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/Info"
 

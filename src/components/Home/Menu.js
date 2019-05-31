@@ -20,7 +20,7 @@ export default class Menu extends Component {
     console.log(props.items)
     this.state = {
       items: props.items.edges,
-      coffeeItems: props.items.edges,
+      foodItems: props.items.edges,
       categories: getCategories(props.items.edges),
     }
   }
@@ -29,12 +29,12 @@ export default class Menu extends Component {
     let tempItems = [...this.state.items]
     if (category === "all") {
       this.setState(() => {
-        return { coffeeItems: tempItems }
+        return { foodItems: tempItems }
       })
     } else {
       let items = tempItems.filter(({ node }) => node.category === category)
       this.setState(() => {
-        return { coffeeItems: items }
+        return { foodItems: items }
       })
     }
   }
@@ -68,7 +68,7 @@ export default class Menu extends Component {
             </div>
             {/* Items */}
             <div className="row">
-              {this.state.coffeeItems.map(({ node }) => {
+              {this.state.foodItems.map(({ node }) => {
                 return (
                   <div
                     key={node.id}
@@ -80,9 +80,7 @@ export default class Menu extends Component {
                     {/*item text */}
                     <div className="flex-grow-1 px-3">
                       <div className="d-flex justify-content-between">
-                        <h6 className="mb-0">
-                          <small>{node.title}</small>
-                        </h6>
+                        <h6 className="mb-0">{node.title}</h6>
                         <h6 className="mb-0 text-yellow">
                           <small>{node.price}</small>€
                         </h6>
@@ -90,6 +88,16 @@ export default class Menu extends Component {
                       <p className="text-muted">
                         <small>{node.description.description}</small>
                       </p>
+                      <button
+                        className="snipcart-add-item btn btn-yellow mt-1 text-capitalize snipcart-add-item"
+                        data-item-id={node.id}
+                        data-item-name={node.title}
+                        data-item-price={node.price}
+                        data-item-image={node.image.fixed.src}
+                        data-item-url="https://gatsby-coffee-website-project.netlify.com/"
+                      >
+                        Order Now
+                      </button>
                     </div>
                   </div>
                 )

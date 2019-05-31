@@ -28,6 +28,22 @@ h6 {
   color: var(--mainYellow);
   font-size: 2rem;
 }
+
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.facebook-icon {
+  color: #3b579d;
+}
+
+.instagram-icon {
+  color: #da5f53;
+}
+.icon:hover {
+  color: var(--mainYellow);
+}
+
 .default-background,
 .about-background {
   min-height: 100vh;
@@ -53,9 +69,101 @@ h6 {
 }
 
 .about-background {
-  min-height: 60vh;
+  min-height: 40vh;
 }
 .menu,
 .contact {
   background: var(--mainGrey);
+}
+
+.gridrow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.gallerywrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 1rem;
+}
+.item {
+  position: relative;
+}
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--mainYellow);
+  padding: 0.1rem 0.3rem;
+  text-transform: capitalize;
+}
+
+@media (min-width: 576px) {
+  .gallerywrapper {
+    grid-column-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .gallerywrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
+  .gallerywrapper {
+    grid-template-areas:
+      "one one two two"
+      "one one three three";
+  }
+
+  .item-1 {
+    grid-area: one;
+  }
+  .item-2 {
+    grid-area: two;
+  }
+  .item-3 {
+    grid-area: three;
+  }
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 15rem;
 }

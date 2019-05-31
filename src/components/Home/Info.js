@@ -7,7 +7,7 @@ export default function Info() {
     <section>
       <div className="py-5">
         <div className="container">
-          <Title title="our Strory" />
+          <Title message="let us tell" title="our Strory" />
           <div className="row">
             <div className="col-10 col-sm-8 mx-auto text-center">
               <p className="lead text-muted mb-5">

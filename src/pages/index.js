@@ -2,12 +2,11 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FaGulp } from "react-icons/fa"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import BackgroundSection from "../components/Globals/BackgroundSection"
 import Info from "../components/Home/Info"
 import Menu from "../components/Home/Menu"
-import Products from "../components/Home/Products"
+import Gallery from "../components/Home/Gallery"
 import Contact from "../components/Home/Contact"
 
 const IndexPage = ({ data }) => (
@@ -15,12 +14,13 @@ const IndexPage = ({ data }) => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <BackgroundSection
       img={data.img.childImageSharp.fluid}
-      title="regular joe's"
+      title="Authentic MOMOs"
       styleClass="default-background"
     />
     <Info />
+    <Gallery />
     <Menu items={data.menu} />
-    <Products />
+
     <Contact />
   </Layout>
 )
@@ -35,7 +35,7 @@ export const query = graphql`
       }
     }
 
-    menu: allContentfulCoffeeItem {
+    menu: allContentfulMyItem {
       edges {
         node {
           id

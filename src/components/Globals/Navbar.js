@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import logo from "../../images/logo.svg"
-import { FaCartArrowDown } from "react-icons/fa"
+import { FaCartArrowDown, FaInstagram, FaFacebook } from "react-icons/fa"
 
 export default class Navbar extends Component {
   state = {
@@ -17,6 +17,17 @@ export default class Navbar extends Component {
         id: 2,
         path: "/about",
         text: "about",
+      },
+
+      {
+        id: 3,
+        path: "/gallery",
+        text: "gallery",
+      },
+      {
+        id: 4,
+        path: "/contact",
+        text: "contact",
       },
     ],
   }
@@ -34,7 +45,7 @@ export default class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+      <nav className="navbar fixed-top navbar-expand-sm bg-light navbar-light">
         <Link to="/" className="navbar-brand">
           <img src={logo} alt="logo" />
           {/* https://www.iconfinder.com/icons/185113/coffee_streamline_icon
@@ -63,6 +74,20 @@ https://www.iconfinder.com/webalys*/}
               <FaCartArrowDown className="cart-icon snipcart-checkout" />
             </li>
           </ul>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook className="icon facebook-icon mx-2 	d-sm-none d-md-block" />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="icon instagram-icon mx-2 	d-sm-none d-md-block" />
+          </a>
         </div>
       </nav>
     )
