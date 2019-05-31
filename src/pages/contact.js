@@ -15,6 +15,7 @@ const ContactPage = ({ data }) => (
       styleClass="about-background"
     />
     <section>
+      {/** */}
       <div className="container">
         <div className="mt-5 mb-5 row">
           <div className="col-10 col-sm-8 col-md-6 mx-auto">
